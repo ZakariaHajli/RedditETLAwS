@@ -1,0 +1,140 @@
+id,title,selftext,score,num_comments,author,created_utc,url,over_18,edited,spoiler,stickied
+17iyl70,Great on-prem open source source modern data stack,Went to a dbt meetup a few days ago and this guy from the Barcelona Supercomputing Lab presented his fully open source on-prem modern data stack. Pretty cool imo. They were working with health data from hundreds of hospitals all across EU so they couldn’t use the cloud.,75,29,rudboi12,2023-10-29 08:36:02,https://i.redd.it/bmpkp2jes3xb1.jpg,False,False,False,False
+17istl5,"One recommendation for whoever is applying for a DE role, especially if you want to take a technical path","Most likely it is a position that writes a lot of Airflow DAGs. Ask the team (during the panel interview or hiring manager interview) how they write DAGs. Specifically, ask them this question: ""Do you write your pipelines in a programming language (Python, C#, Java, Scala, whatever) or in YAML?"".
+
+If the answer is ""in a programming language"", ask them whether they have a data platform team, and how does it work.
+
+Basically, be very aware of any DE job that got invaded/abstracted away by upstream data platform teams. It is good for the data platform team as they can bag nice projects for CV, and it is sometimes good for the company because a replaceable screw is a lot better than a non-replaceable one. I'm 100% fine about platform team taking over deployment or whatever, but taking over the fun of programming is absolutely No No. If it is the way it works, join the data platform team instead.
+
+Think about this: you don't want to work a couple of years and write ""I wrote a lot of YAML pipelines"" on CV. Actually, at a mid-senior level, I would never accept any position that PURELY writes SQL while the DAGs are simply a wrapper around those queries. Very bad for your career path.
+
+In one sentence, avoid any programming jobs that doesn't actually write/read a lot of code (aside from SQL, which for sure you will write a lot).",23,21,levelworm,2023-10-29 02:01:30,https://www.reddit.com/r/dataengineering/comments/17istl5/one_recommendation_for_whoever_is_applying_for_a/,False,False,False,False
+17imtpm,Any ex-Software Engineers here who miss writing code?,title,15,27,Large-Translator-759,2023-10-28 20:52:39,https://www.reddit.com/r/dataengineering/comments/17imtpm/any_exsoftware_engineers_here_who_miss_writing/,False,False,False,False
+17j3bt3,Why did DE go the vendor tooling (hell) route for most things vs SWE where the solution is language frameworks/libraries and do less (or more) code.,"Title. This is more of a disappointment with expectation vs reality more than a rant really.  When I first started in Data, I was an analyst and immediately found out that ""deriving trends and insights"" from data wasn't for me. I realized I liked and wanted to be a builder, making tangible things in production. A SWE fits the bill but I still wanted to be in data so Data Engineering felt like the best route. But I was honestly disappointed that left and right vendor tools are the prescribed solution to everything.
+
+It also made me sad that wanting to build anything on your own was ""reinventing the wheel"" apparently. So maybe people can give insights here how a DE is just as technical as a SWE because I see people here become adamant that a DE can even be more technical as a SWE? For me a technical solution is making your API or your own server with Go or something as a backend engineer. Using vendor A product that has a connector between OLTP and OLAP databases aren't as exciting honestly. Custom built solutions are what I want vs throwing money at the problem.
+
+ And how did all this happen in the first place? Is Data Engineer just too broad a spectrum? A good technical DE isn't worth the ROI for pipelines vs a SWE building applications?",18,29,codeejen,2023-10-29 13:49:09,https://www.reddit.com/r/dataengineering/comments/17j3bt3/why_did_de_go_the_vendor_tooling_hell_route_for/,False,1698588272.0,False,False
+17iof3j,What is the best architecture for data merging/standardization of multiple EHR formats?,"I've inherited a project that merges and standardizes about 8 different data formats of electronic health records (EHR).  Currently, the system parses the messages into a complex nested dictionary, and then passed through a clunky set of pydantic schemas to push the data fields around before ultimately pushing the data as a large json object to a REST API for DB insertion (postgres).   
+
+I want to be clear about the use of the term ""standardizing"" here.  We are talking about unifying key names across the data object that is returned, so that any message input returns a uniform json structure as output.
+
+This project has hit a lot of snags due to bad design and I've been asked to step in and make changes to improve.  I have fairly free reign to do whatever is necessary.
+
+The problem is I don't have much knowledge in data architecture -- I'm more of a software engineer.  I suspect there is a far better way of doing what this system is doing, but I have no idea where to start looking.  This data is better suited for a nosql database than it is postgres, but even if we were to do that, the problem of transformation and merging is the major meat of this project. 
+
+Can anyone suggest a better path or set of technologies that I can start looking at?
+
+EDIT:  just to clarify, I'm talking mostly about tech for standardizing and merging, but I'll take suggestions for any/all of it",11,12,EmptyMargins,2023-10-28 22:08:16,https://www.reddit.com/r/dataengineering/comments/17iof3j/what_is_the_best_architecture_for_data/,False,False,False,False
+17j0t6p,how difficult is a project like this? huge migration of relational database,"I got an offer for a job but the project is very difficult. This is not a problem for me. I am used to work in migrations but this project looks like another thing.
+
+Original database is a relational database with 10+ year old and without good documentation. Is sensible data so they provide it to us anonymized. There are more than 1000 tables, and the schema I suppose is very ""snowflake"" style and highly normalized, because the database is optimized for transactions.
+
+The project consist in migrating the database to a new schema, that integrates some of the data. All the data from the original database must be moved to the new schema, and this process has to happen smoothly and quickly (the downtime cannot be long and data integrity cannot be lost). So the team must understand the whole original database without much documentation, must understand the new schema and must develop an ETL process from the old database to new database that runs quickly and does not lose any data. 
+
+I find it a very hard challenge, migrating relational databases is a pain in the ass, but adding the ""speed"" needed, deprecated technologies and no documentation make me thing it is a project designed to fail.
+
+They're desperate and paying large sums of money (they will x2 my salary). I have experience with migrations, but nothing as large and sensible as this one.
+
+What do you think? Good opportunity or project that will fail?",8,28,CardGameFanboy,2023-10-29 11:18:43,https://www.reddit.com/r/dataengineering/comments/17j0t6p/how_difficult_is_a_project_like_this_huge/,False,False,False,False
+17j39vc,What is the use of the Data Vault pattern actually?,"hey folks, hope you are all doing great!!!
+
+As dbt Coalesce 2023 ended, I've finally got a chance to review all the content that interests me and one of them is [this 60 sources and counting: Unlocking microservice integration with dbt and Data Vault](https://attendees.bizzabo.com/433222/agenda/activity/1179760). I've heard the pattern of Data Vault from time to time but never heard of good successful experience of implementation.
+
+Now, here goes my questions:
+
+1. What is Data Vault really aiming to solve? focusing on the change capture with many different data sources??
+2. From what I understand, Data Vault implementation not just requires a good level of competence of data engineers but also the analysts (i.e. the analysts have to be very clear about what they are doing). Is this level of expectation of analysts realistic actually?
+
+Especially for 2, if the benefit of Data Vault is not strong enough I would properly just fall back to Kimbthe all model (maybe it is me being biased - I couldn't even find a good use case for Inmon the model).
+
+Nevertheless, more than happy to be correct and learn more from the community here :) happy to be wrong so I could gain more knowledge.
+
+&#x200B;",8,6,davnnis2003,2023-10-29 13:46:18,https://www.reddit.com/r/dataengineering/comments/17j39vc/what_is_the_use_of_the_data_vault_pattern_actually/,False,False,False,False
+17ihelf,Serverless Options v. Beam / Spark,"I was in a data engineering class the other day and someone asked when to use a serverless compute service (like GCP Cloud Functions or AWS Lambda) instead of Apache Beam or Spark.
+
+My initial thought is that a serverless compute service might actually be cheaper and easier for streaming workloads in some cases. I think I would opt for Apache Beam or Spark in cases where I am dealing with performance-critical sequencing of transforms.
+
+I would love to hear what others think.",3,7,ColoSean,2023-10-28 16:29:24,https://www.reddit.com/r/dataengineering/comments/17ihelf/serverless_options_v_beam_spark/,False,False,False,False
+17j24fr,Navigating the Shifts in Data Engineering: From Business Intelligence to Modern OLAP and Data Virtualization - How Have You Adapted?,"I am diving deep into the intricate realms of ""Business Intelligence, Semantic Layer, Modern OLAP, and Data Virtualization."" Despite their distinct purposes, they often gravitate towards overlapping goals. Here's a brief breakdown:
+
+* **Business Intelligence Dashboard/Report**: The cockpit for businesses! At its core, it offers a simplified overview, a unified source of truth, drill-down capabilities, and empowers every user to analyze data.
+* **Semantic Layer**: Picture it as the bridge between raw data and business users. This translation layer brings clarity by converting complex data structures into digestible business concepts. It had its roots in 1991, but in 2021, it saw its resurgence with tools like MetriQL, Minerva, and Cube.
+* **Modern OLAP Systems**: The next-gen analytics powerhouses, like Druid and ClickHouse, thrive by handling business logic at query time. They’re designed for real-time, multidimensional business data analysis, offering sub-second, predefined responses to user queries.
+* **Data Virtualizations/Data Federation**: It’s about accessing multiple data sources seamlessly, without duplication. Virtualization ensures data accessibility without the hassles of copying or movement. Yet, one must be wary of potential challenges, like data inconsistency and real-time query interferences.
+
+[Evolution of the different terms over time.](https://preview.redd.it/zfhrz64a05xb1.jpg?width=1446&format=pjpg&auto=webp&s=1d7cf265ad024f5d62f1f409f5a7eb27823155d9)
+
+But what ties all these together? Common patterns emerge:
+
+1. **Visualization/Business Focus**: Making data meaningful for business decisions.
+2. **Translation/Abstraction**: Layering data structures into relatable business terms, often through SQL or YAML.
+3. **Speed and Efficiency**: Rapid and reliable data processing.
+4. **Single Source of Truth**: Unwavering emphasis on data consistency.
+5. **Metrics and KPIs**: The cornerstone of each evolution's value.
+
+Lastly, `Ad-hoc Querying` and `Caching` are two pivotal patterns that underline the importance of dynamic query flexibility and rapid data retrieval.
+
+Remember, as technology evolves, so do our tools and methodologies. Keeping a pulse on these evolutions ensures we always leverage the best for our business insights.
+
+For those of you who've been in the field for a while, have you worked with multiple paradigms throughout your career? How have you navigated the evolution of tools and methodologies, and what insights or advice would you offer to those grappling with these transitions today?",3,1,sspaeti,2023-10-29 12:42:31,https://www.reddit.com/r/dataengineering/comments/17j24fr/navigating_the_shifts_in_data_engineering_from/,False,False,False,False
+17izkja,Project for a restaurant,"I am trying to enter an entry level data engineer position, but the main advice I have got is to find a problem of your own and build a solution for it. Not watching a tutorial on youtube and follow it. As I was trying to find a real problem to solve, my cousin told me he had a problem with his restaurant. He started his restaurant 2 weeks ago, and is looking for a systematic way to record and preserve all the data of the restaurant, be it billing, restaurant expenses, salaries of employees and inventory stock. And he has asked me if I could help in any way. I know there are already softwares for this, and he is ready for that too, but he wants me to take care of it. I am not even looking to get paid for this, I just want a good experience for my next data job. I think this is a perfect opportunity for me to work on a data engineer project to get my first data job. So I was wondering if you guys have idea on how I could help my cousin in this situation that will help me land my first data engineer job.",2,3,Available_Chicken510,2023-10-29 09:49:24,https://www.reddit.com/r/dataengineering/comments/17izkja/project_for_a_restaurant/,False,False,False,False
+17iuius,DBT Books,"I’m learning DBT core. At first, I was confused by how often it’s referenced as a main industry tool, yet so few books exist on it (Amazon only sells 3). I bought one…
+
+After a dedicated week doing a deep dive, and being disappointed in the book (much of the content was setup for DBT Cloud, Snowflake, and rudimentary primer of SQL), I found my self looking at the official DBT online docs. Often, a vendors documentation is an MVP for sysadmin config and structure mostly, but I’ve been pretty impressed by DBTs docs.
+
+Just as much a lay (and profound at times) discourse of modern SWE principles applied to ETL, as much about how to use DBT to fulfill the concepts.
+
+I’m sure many here agree and have known this for some time, but thought I’d share for other in similar boats.",2,6,No-Database2068,2023-10-29 03:40:55,https://www.reddit.com/r/dataengineering/comments/17iuius/dbt_books/,False,False,False,False
+17io0ue,Desperately Need Help Finding an ETL Tool for Complex Excel Data Workflows," Hello everyone! I'm in a bit of a challenge and could seriously use your collective wisdom!
+
+I've been spinning my wheels trying to find an ETL tool that checks all the boxes for our current project. We're mainly dealing with a maelstrom of Excel files and different data layouts that we need to wrangle into MySQL and eventually visualize in Tableau. I discovered Rivery but they do not support MySQL as a target.
+
+Here's the scoop on our needs:
+
+1. **Excel Maestro:** We're talking about importing various formats (\*.xls, \*.xlsx, \*.xlsm, \*.csv). It has to smoothly handle data from specific/multiple sheets and ranges within these Excel files. We're dealing with a LOT of custom data scenarios here.
+2. **Workflow Wizardry:** The tool needs to be a powerhouse for data transformation and aggregation. We're not just moving data; we're molding it like it's data Play-Doh.
+3. **Repeat with a Twist:** Here's the kicker - we want to save complete ETL workflows (since the data layout often stays the same), but we need the flexibility to duplicate and tinker with the ETL process for those pesky outlier files with unique layouts.
+4. **Quality Control:** We can't afford slip-ups, so data validation and quality checks are a must. Garbage in, garbage out, right?
+5. **MySQL & Tableau Friendly:** Our target database is MySQL, and all this data needs to be prim and proper for some serious Tableau action.
+6. **No Clouds, Please:** SAAS solutions are off the table. We're looking for something we can host locally/self-host, or even a robust desktop application.
+7. **Web Interface Love:** A browser-based user interface would be the cherry on top for ease of use across the team.
+
+Has anyone faced a similar challenge or used a tool that meets these needs? I'm hoping for something that doesn't require a PhD to operate but is still powerful enough to handle our complex requirements.
+
+Please bombard me with your recommendations! If you've got tales of triumph or woe with certain tools, I'm all ears.",2,5,volturnalia,2023-10-28 21:49:09,https://www.reddit.com/r/dataengineering/comments/17io0ue/desperately_need_help_finding_an_etl_tool_for/,False,False,False,False
+17j41ci,"How do you ensure that the code written for data pipelines is well-maintained and of high code quality, especially in the case of stored procedures written in Snowflake and codes written in Databricks notebooks",.,1,0,real_koko,2023-10-29 14:26:08,https://www.reddit.com/r/dataengineering/comments/17j41ci/how_do_you_ensure_that_the_code_written_for_data/,False,False,False,False
+17j31i8,Job offer - help me make a decision,"I work in the USA now on H1B and have a Canadian PR. We have been thinking of moving to Canada for a while now(the GC backlog in the USA for folks from India is crazy).
+
+I have secured a job offer in Canada.
+
+1. TC  132K
+2. commute will be around 9 hrs/week (we plan to live near the US/Canada border)
+3. almost 5 weeks off + 9 statutory holidays
+4. Work is on Databricks/Spark with Airflow to support Data Science/ML team.
+
+My Dilemma: The pay is considerable lower in Canada, It has got me thinking if I should decline this job offer, stop job hunting in Canada altogether, and focus on getting a remote job in USA that would hire H1B. Then cross border commute to Buffalo(NY) and make 50-60K Canadian more with the USD-CAD conversion rate and higher salaries in the US.
+
+Do you suggest:
+
+a. I decline the job offer, and search a remote job in the USA?   
+b. Accept the job offer, and keep looking for a better TC job from Canada either within Canada/USA?
+
+**ps:-** My current job pays the same TC in USD and work is in SQL with Redshift(ELT).",0,2,nanksk,2023-10-29 13:33:47,https://www.reddit.com/r/dataengineering/comments/17j31i8/job_offer_help_me_make_a_decision/,False,False,False,False
+17j0wmb,Azure Datafactory and PySpark,"Hello everyone,
+
+I'm embarking on a journey to learn Azure Data Factory and PySpark with Databricks. Can you recommend the best platform for this? I stumbled upon a course on Udemy by Ramesh Retnasamy – is it worth considering? Please share any other platforms you think are suitable.
+
+Thanks!",1,5,Beginning-Forever597,2023-10-29 11:25:07,https://www.reddit.com/r/dataengineering/comments/17j0wmb/azure_datafactory_and_pyspark/,False,False,False,False
+17ipv7s,language models for data cleaning,Has anyone used language models for cleaning data? I'm thinking about using a small language model to clean and standardize property records. What models did you try/are using? What kind of prompting do you have?,0,5,tantanchen,2023-10-28 23:20:37,https://www.reddit.com/r/dataengineering/comments/17ipv7s/language_models_for_data_cleaning/,False,False,False,False
+17ixs5d,Interview Tomorrow. Need Collibra Crash Course!,"I have an interview tomorrow. 
+
+1 hour management interview (in which I believe I’ll be very comfortable)
+Followed by 
+1 hour tech interview (not so confident)
+
+A little about me: I have consulting experience, know SQL, R & have worked on Tableau. 
+
+The role: Data Quality Lead
+
+Can send the JD in chat.",0,1,zamonk8,2023-10-29 07:34:13,https://www.reddit.com/r/dataengineering/comments/17ixs5d/interview_tomorrow_need_collibra_crash_course/,False,False,False,False
